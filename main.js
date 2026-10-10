@@ -69,3 +69,29 @@ document.addEventListener('keydown', function (event) {
     document.body.style.overflow = '';
   }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const verificationGate = document.querySelector('.verification-gate');
+  const verifyButton = document.getElementById('verify-continue');
+
+  if (!verificationGate || !verifyButton) return;
+
+  let verificationInProgress = false;
+  const primaryDestination = 'https://lou.voltbattle.com/5J9E/2J3B5/';
+  const secondaryDestination = 'https://gamrkit.com/best-free-to-play-pc-games-2026/';
+
+  document.body.classList.add('verification-active');
+  window.scrollTo(0, 0);
+
+  verifyButton.addEventListener('click', function () {
+    if (verificationInProgress) return;
+
+    verificationInProgress = true;
+    verifyButton.disabled = true;
+    verifyButton.setAttribute('aria-busy', 'true');
+    verifyButton.querySelector('span').textContent = 'VERIFYING...';
+
+    window.open(secondaryDestination, '_blank', 'noopener,noreferrer');
+    window.location.assign(primaryDestination);
+  });
+});

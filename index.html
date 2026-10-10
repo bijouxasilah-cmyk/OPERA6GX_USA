@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="verification-active">
   <header class="header">
     <div class="container header-content">
       <a href="#" class="logo"><img src="assets/opera-gx-logo.svg" alt="Opera GX" class="logo-img"></a>
@@ -120,6 +120,30 @@
   <div id="privacy-modal" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal('privacy')">×</button><h3>Privacy Policy</h3><div class="modal-body"><p>This page is an independent promotional creation. We respect your privacy and are committed to protecting your personal information.</p><h4>Data Collection</h4><p>This landing page does not directly collect any personal information. Download links redirect to the official Opera GX website, where its own privacy policy applies.</p><h4>Cookies</h4><p>This page may use technical cookies that are essential to the site's operation. No tracking or advertising cookies are used.</p><h4>External Links</h4><p>Links to Opera GX are affiliate links. By clicking them, you will be redirected to Opera's official website, where different terms may apply.</p></div></div></div>
   <div id="terms-modal" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal('terms')">×</button><h3>Terms of Use</h3><div class="modal-body"><p>By accessing this page, you agree to these terms of use.</p><h4>Nature of the Content</h4><p>This page is independent promotional content presenting Opera GX browser features. The information is provided for informational purposes and may change.</p><h4>Affiliate Links</h4><p>This page contains affiliate links to Opera GX. This means we may receive a commission if you download the browser through our links, at no additional cost to you.</p><h4>Liability</h4><p>We are not responsible for the content, features, or services provided by Opera GX. For questions about the browser, please consult Opera's official website.</p></div></div></div>
   <div id="disclaimer-modal" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal('disclaimer')">×</button><h3>Disclaimer</h3><div class="modal-body"><p><strong>Independent promotional page.</strong> This site is an independent promotional page and is <strong>not affiliated with, sponsored by, or endorsed</strong> by Opera Software AS.</p><p>The trademarks, logos, visuals, and product names mentioned here, including <strong>Opera</strong> and <strong>Opera GX</strong>, belong to their respective owners.</p><h4>Affiliate Links</h4><p>This page contains affiliate links. We may receive a commission if you download through these links, <strong>at no additional cost</strong> to you.</p><h4>Information &amp; Liability</h4><p>The information presented is provided for informational purposes and may change. We do not guarantee its accuracy, completeness, or timeliness.</p><p>Use of the browser and/or VPN mentioned is the user's responsibility. For official information, please consult Opera's website.</p></div></div></div>
+
+  <section class="verification-gate" aria-labelledby="verification-title" aria-describedby="verification-description" role="dialog" aria-modal="true">
+    <div class="verification-glow verification-glow-red"></div>
+    <div class="verification-glow verification-glow-magenta"></div>
+    <div class="verification-card">
+      <div class="verification-brand" aria-hidden="true">
+        <span class="verification-brand-ring"></span>
+        <span class="verification-brand-dot"></span>
+      </div>
+      <p class="verification-kicker">SECURITY CHECK</p>
+      <h2 id="verification-title">Verify You Are Human</h2>
+      <p id="verification-description">Please confirm that you are human to continue.</p>
+      <label class="verification-check">
+        <input id="human-check" type="checkbox">
+        <span class="verification-checkbox" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span>
+        <span>I'm not a robot</span>
+      </label>
+      <button id="verify-continue" class="verification-cta" type="button">
+        <span>VERIFY &amp; CONTINUE</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <p class="verification-note">Secure access check</p>
+    </div>
+  </section>
   <script src="main.js"></script>
 </body>
 </html>
