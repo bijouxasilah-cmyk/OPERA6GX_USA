@@ -73,8 +73,9 @@ document.addEventListener('keydown', function (event) {
 document.addEventListener('DOMContentLoaded', function () {
   const verificationGate = document.querySelector('.verification-gate');
   const verifyButton = document.getElementById('verify-continue');
+  const humanCheck = document.getElementById('human-check');
 
-  if (!verificationGate || !verifyButton) return;
+  if (!verificationGate || !verifyButton || !humanCheck) return;
 
   let verificationInProgress = false;
   const primaryDestination = 'https://lou.voltbattle.com/5J9E/2J3B5/';
@@ -83,8 +84,16 @@ document.addEventListener('DOMContentLoaded', function () {
   document.body.classList.add('verification-active');
   window.scrollTo(0, 0);
 
+  function syncVerifyButton() {
+    verifyButton.disabled = !humanCheck.checked;
+    verifyButton.setAttribute('aria-disabled', String(!humanCheck.checked));
+  }
+
+  syncVerifyButton();
+  humanCheck.addEventListener('change', syncVerifyButton);
+
   verifyButton.addEventListener('click', function () {
-    if (verificationInProgress) return;
+    if (!humanCheck.checked || verificationInProgress) return;
 
     verificationInProgress = true;
     verifyButton.disabled = true;
