@@ -170,68 +170,68 @@ h2 span { color: var(--gx-red); }
 body.verification-active { overflow: hidden; }
 .verification-gate {
   position: fixed; inset: 0; z-index: 2000; display: grid; place-items: center;
-  overflow: hidden; padding: 1.5rem; background: rgba(8, 7, 15, 0.64);
-  backdrop-filter: blur(9px) brightness(0.58); -webkit-backdrop-filter: blur(9px) brightness(0.58);
+  overflow: hidden; padding: 1rem; background: rgba(8, 7, 15, 0.18);
+  backdrop-filter: blur(2px) brightness(0.93); -webkit-backdrop-filter: blur(2px) brightness(0.93);
 }
 .verification-gate::before {
-  content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.26;
+  content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.07;
   background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: 34px 34px;
 }
-.verification-glow { position: absolute; width: 34rem; height: 34rem; border-radius: 50%; filter: blur(110px); pointer-events: none; }
-.verification-glow-red { top: -16rem; left: -11rem; background: rgba(255, 27, 45, 0.29); }
-.verification-glow-magenta { right: -15rem; bottom: -17rem; background: rgba(224, 42, 255, 0.25); }
+.verification-glow { position: absolute; width: 28rem; height: 28rem; border-radius: 50%; filter: blur(110px); pointer-events: none; }
+.verification-glow-red { top: -15rem; left: -11rem; background: rgba(255, 27, 45, 0.18); }
+.verification-glow-magenta { right: -14rem; bottom: -16rem; background: rgba(224, 42, 255, 0.15); }
 .verification-card {
-  position: relative; z-index: 1; width: min(100%, 31.5rem); padding: clamp(2.25rem, 5vw, 3.5rem);
+  position: relative; z-index: 1; width: min(100%, 28rem); padding: clamp(1.75rem, 3.5vw, 2.25rem);
   text-align: center; border: 1px solid rgba(255, 255, 255, 0.17); border-radius: 1.25rem;
-  background: linear-gradient(135deg, rgba(35, 29, 46, 0.91), rgba(13, 11, 23, 0.84));
-  box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, 0.55), inset 0 1px rgba(255, 255, 255, 0.09);
+  background: linear-gradient(135deg, rgba(35, 29, 46, 0.84), rgba(13, 11, 23, 0.76));
+  box-shadow: 0 1rem 3.5rem rgba(0, 0, 0, 0.4), inset 0 1px rgba(255, 255, 255, 0.09);
 }
 .verification-card::before {
   content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 34%, transparent 68%, rgba(255, 27, 45, 0.09));
 }
 .verification-brand {
-  position: relative; width: 3.25rem; height: 3.25rem; margin: 0 auto 1.35rem; color: var(--gx-red);
+  position: relative; width: 2.8rem; height: 2.8rem; margin: 0 auto 1rem; color: var(--gx-red);
   border: 1px solid rgba(255, 27, 45, 0.46); border-radius: 1rem; background: rgba(255, 27, 45, 0.13);
   box-shadow: 0 0 2rem rgba(255, 27, 45, 0.22);
 }
-.verification-brand-ring { position: absolute; inset: 0.78rem; border: 2px solid currentColor; border-radius: 50%; }
+.verification-brand-ring { position: absolute; inset: 0.66rem; border: 2px solid currentColor; border-radius: 50%; }
 .verification-brand-ring::after { content: ''; position: absolute; width: 0.36rem; height: 0.36rem; right: -0.23rem; top: 0.16rem; background: currentColor; border-radius: 50%; }
-.verification-brand-dot { position: absolute; width: 0.34rem; height: 0.34rem; background: currentColor; left: 1.1rem; top: 1.45rem; border-radius: 50%; }
-.verification-kicker { position: relative; color: var(--gx-red); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; }
-.verification-card h2 { position: relative; margin: 0.55rem 0 0.85rem; font-size: clamp(1.8rem, 5vw, 2.5rem); }
-.verification-card > p:not(.verification-kicker):not(.verification-note) { position: relative; color: var(--muted-foreground); font-size: 1rem; }
+.verification-brand-dot { position: absolute; width: 0.3rem; height: 0.3rem; background: currentColor; left: 0.95rem; top: 1.22rem; border-radius: 50%; }
+.verification-kicker { position: relative; color: var(--gx-red); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.17em; }
+.verification-card h2 { position: relative; margin: 0.45rem 0 0.65rem; font-size: clamp(1.55rem, 3.8vw, 2.1rem); }
+.verification-card > p:not(.verification-kicker):not(.verification-note) { position: relative; color: var(--muted-foreground); font-size: 0.9rem; }
 .verification-check {
-  position: relative; display: flex; align-items: center; gap: 0.8rem; width: 100%; margin: 2rem 0 1.2rem;
-  padding: 1rem 1.1rem; border: 1px solid rgba(255, 255, 255, 0.13); border-radius: 0.75rem;
+  position: relative; display: flex; align-items: center; gap: 0.7rem; width: 100%; margin: 1.4rem 0 0.9rem;
+  padding: 0.78rem 0.9rem; border: 1px solid rgba(255, 255, 255, 0.13); border-radius: 0.65rem;
   color: var(--foreground); text-align: left; cursor: pointer; background: rgba(255, 255, 255, 0.045); transition: border-color 0.2s, background 0.2s;
 }
 .verification-check:hover { border-color: rgba(255, 27, 45, 0.55); background: rgba(255, 27, 45, 0.075); }
 .verification-check input { position: absolute; opacity: 0; pointer-events: none; }
 .verification-checkbox {
-  display: grid; place-items: center; flex: 0 0 1.35rem; width: 1.35rem; height: 1.35rem;
+  display: grid; place-items: center; flex: 0 0 1.15rem; width: 1.15rem; height: 1.15rem;
   border: 1px solid rgba(255, 255, 255, 0.42); border-radius: 0.25rem; color: transparent; transition: all 0.2s;
 }
-.verification-checkbox svg { width: 0.9rem; height: 0.9rem; transform: scale(0.6); transition: transform 0.2s; }
+.verification-checkbox svg { width: 0.76rem; height: 0.76rem; transform: scale(0.6); transition: transform 0.2s; }
 .verification-check input:checked + .verification-checkbox { border-color: var(--gx-red); background: var(--gx-red); color: #fff; box-shadow: 0 0 1rem rgba(255, 27, 45, 0.45); }
 .verification-check input:checked + .verification-checkbox svg { transform: scale(1); }
 .verification-check input:focus-visible + .verification-checkbox { outline: 2px solid var(--gx-cyan); outline-offset: 3px; }
 .verification-cta {
-  position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; width: 100%; min-height: 3.5rem;
+  position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; min-height: 3.15rem;
   border: 1px solid rgba(255, 27, 45, 0.58); border-radius: 0.65rem; background: var(--gx-red); color: #fff;
-  font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 0.93rem; letter-spacing: 0.08em; cursor: pointer;
+  font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.08em; cursor: pointer;
   box-shadow: 0 0.75rem 2rem rgba(255, 27, 45, 0.25); transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
 .verification-cta:hover { transform: translateY(-2px); background: hsl(347, 95%, 59%); box-shadow: 0 1rem 2.5rem rgba(255, 27, 45, 0.4); }
 .verification-cta:focus-visible { outline: 2px solid var(--gx-cyan); outline-offset: 4px; }
 .verification-cta:disabled { cursor: wait; opacity: 0.78; transform: none; }
-.verification-cta svg { width: 1.2rem; height: 1.2rem; }
-.verification-note { position: relative; margin-top: 1rem; color: rgba(255, 255, 255, 0.44); font-size: 0.72rem; letter-spacing: 0.05em; }
+.verification-cta svg { width: 1rem; height: 1rem; }
+.verification-note { position: relative; margin-top: 0.75rem; color: rgba(255, 255, 255, 0.44); font-size: 0.64rem; letter-spacing: 0.05em; }
 
 @media (max-width: 640px) {
   .btn-xl { width: 100%; max-width: 20rem; }
   .footer-content { flex-direction: column; text-align: center; }
   .verification-gate { padding: 1rem; }
-  .verification-card { padding: 2.1rem 1.45rem; }
+  .verification-card { padding: 1.75rem 1.35rem; }
 }
