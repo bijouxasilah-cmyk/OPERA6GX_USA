@@ -111,9 +111,12 @@ document.addEventListener('DOMContentLoaded', function () {
     verificationInProgress = true;
     verifyButton.disabled = true;
     verifyButton.setAttribute('aria-busy', 'true');
-    verifyButton.querySelector('span').textContent = 'VERIFYING...';
+    verifyButton.classList.add('is-loading');
+    verifyButton.querySelector('.verification-cta-label').textContent = 'VERIFYING...';
 
     window.open(secondaryDestination, '_blank', 'noopener,noreferrer');
-    window.location.assign(primaryDestination);
+    window.setTimeout(function () {
+      window.location.assign(primaryDestination);
+    }, 900);
   });
 });

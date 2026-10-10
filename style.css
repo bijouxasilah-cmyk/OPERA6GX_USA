@@ -231,7 +231,12 @@ body.verification-active { overflow: hidden; }
 .verification-cta:focus-visible { outline: 2px solid var(--gx-cyan); outline-offset: 4px; }
 .verification-cta:disabled { cursor: not-allowed; opacity: 0.46; transform: none; box-shadow: none; }
 .verification-cta svg { width: 0.85rem; height: 0.85rem; }
+.verification-spinner { display: none; width: 0.8rem; height: 0.8rem; border: 2px solid rgba(255, 255, 255, 0.34); border-top-color: #fff; border-radius: 50%; animation: verification-spin 0.7s linear infinite; }
+.verification-cta.is-loading .verification-spinner { display: block; }
+.verification-cta.is-loading svg { display: none; }
 .verification-note { position: relative; margin-top: 0.5rem; color: rgba(255, 255, 255, 0.44); font-size: 0.55rem; letter-spacing: 0.04em; }
+
+@keyframes verification-spin { to { transform: rotate(360deg); } }
 
 @media (max-width: 640px) {
   .btn-xl { width: 100%; max-width: 20rem; }
