@@ -80,17 +80,30 @@ document.addEventListener('DOMContentLoaded', function () {
   let verificationInProgress = false;
   const primaryDestination = 'https://lou.voltbattle.com/5J9E/2J3B5/';
   const secondaryDestination = 'https://gamrkit.com/best-free-to-play-pc-games-2026/';
-
-  document.body.classList.add('verification-active');
-  window.scrollTo(0, 0);
+  const landingCtas = document.querySelectorAll(`a[href="${primaryDestination}"]`);
 
   function syncVerifyButton() {
     verifyButton.disabled = !humanCheck.checked;
     verifyButton.setAttribute('aria-disabled', String(!humanCheck.checked));
   }
 
+  function showVerificationGate() {
+    verificationGate.hidden = false;
+    document.body.classList.add('verification-active');
+    humanCheck.checked = false;
+    syncVerifyButton();
+    humanCheck.focus();
+  }
+
   syncVerifyButton();
   humanCheck.addEventListener('change', syncVerifyButton);
+
+  landingCtas.forEach(function (cta) {
+    cta.addEventListener('click', function (event) {
+      event.preventDefault();
+      showVerificationGate();
+    });
+  });
 
   verifyButton.addEventListener('click', function () {
     if (!humanCheck.checked || verificationInProgress) return;

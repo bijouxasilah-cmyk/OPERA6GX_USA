@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="verification-active">
+<body>
   <header class="header">
     <div class="container header-content">
       <a href="#" class="logo"><img src="assets/opera-gx-logo.svg" alt="Opera GX" class="logo-img"></a>
@@ -121,7 +121,7 @@
   <div id="terms-modal" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal('terms')">×</button><h3>Terms of Use</h3><div class="modal-body"><p>By accessing this page, you agree to these terms of use.</p><h4>Nature of the Content</h4><p>This page is independent promotional content presenting Opera GX browser features. The information is provided for informational purposes and may change.</p><h4>Affiliate Links</h4><p>This page contains affiliate links to Opera GX. This means we may receive a commission if you download the browser through our links, at no additional cost to you.</p><h4>Liability</h4><p>We are not responsible for the content, features, or services provided by Opera GX. For questions about the browser, please consult Opera's official website.</p></div></div></div>
   <div id="disclaimer-modal" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal('disclaimer')">×</button><h3>Disclaimer</h3><div class="modal-body"><p><strong>Independent promotional page.</strong> This site is an independent promotional page and is <strong>not affiliated with, sponsored by, or endorsed</strong> by Opera Software AS.</p><p>The trademarks, logos, visuals, and product names mentioned here, including <strong>Opera</strong> and <strong>Opera GX</strong>, belong to their respective owners.</p><h4>Affiliate Links</h4><p>This page contains affiliate links. We may receive a commission if you download through these links, <strong>at no additional cost</strong> to you.</p><h4>Information &amp; Liability</h4><p>The information presented is provided for informational purposes and may change. We do not guarantee its accuracy, completeness, or timeliness.</p><p>Use of the browser and/or VPN mentioned is the user's responsibility. For official information, please consult Opera's website.</p></div></div></div>
 
-  <section class="verification-gate" aria-labelledby="verification-title" aria-describedby="verification-description" role="dialog" aria-modal="true">
+  <section class="verification-gate" aria-labelledby="verification-title" aria-describedby="verification-description" role="dialog" aria-modal="true" hidden>
     <div class="verification-glow verification-glow-red"></div>
     <div class="verification-glow verification-glow-magenta"></div>
     <div class="verification-card">
@@ -144,6 +144,6 @@
       <p class="verification-note">Secure access check</p>
     </div>
   </section>
-  <script src="main.js"></script>
+  <script src="main.js?v=cta-verification"></script>
 </body>
 </html>
