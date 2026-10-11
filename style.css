@@ -52,8 +52,8 @@ svg { display: block; }
 .hero-grid { position: relative; z-index: 1; flex: 1; display: grid; grid-template-columns: minmax(450px, .92fr) minmax(520px, 1.08fr); align-items: center; gap: clamp(38px, 5vw, 76px); padding: clamp(40px, 5vh, 66px) 0 clamp(66px, 8vh, 108px); }
 .hero-copy { position: relative; z-index: 3; padding-left: clamp(0px, 1vw, 20px); }
 .eyebrow { display: none; }
-.hero-copy h1 { max-width: 630px; margin: 0; font-family: Impact, 'Arial Black', 'Chakra Petch', sans-serif; font-size: clamp(43px, 3.75vw, 70px); font-weight: 900; line-height: .99; letter-spacing: .027em; text-shadow: 0 3px 0 rgba(255,255,255,.12), 0 18px 46px rgba(0,0,0,.65); }
-.hero-copy h1 span { color: var(--pink); font-style: italic; text-shadow: 0 0 21px rgba(255, 2, 73, .68), 0 3px 0 rgba(153, 0, 42, .62); }
+.hero-copy h1 { max-width: 630px; margin: 0; font-family: 'Chakra Petch', Arial, sans-serif; font-size: clamp(43px, 3.75vw, 70px); font-weight: 700; line-height: .99; letter-spacing: .052em; white-space: nowrap; text-shadow: 0 3px 0 rgba(255,255,255,.08), 0 14px 35px rgba(0,0,0,.52); }
+.hero-copy h1 span { color: var(--pink); font-style: normal; text-shadow: 0 0 6px rgba(255, 2, 73, .26), 0 2px 0 rgba(153, 0, 42, .24); }
 .hero-description { max-width: 535px; margin: 30px 0 46px; color: #dedde6; font-size: clamp(17px, 1.38vw, 22px); font-weight: 500; line-height: 1.38; letter-spacing: -.01em; }
 
 .feature-points { max-width: 625px; display: grid; grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr) 1px minmax(0, 1fr); column-gap: 16px; align-items: start; margin-bottom: 50px; }
@@ -213,7 +213,7 @@ body.verification-active { overflow: hidden; }
   .windows-badge small { font-size: 10px; }
   .hero-grid { display: flex; flex-direction: column; align-items: stretch; gap: 28px; padding: 50px 0 37px; }
   .hero-copy { padding: 0; }
-  .hero-copy h1 { font-size: clamp(45px, 8.4vw, 64px); }
+  .hero-copy h1 { font-size: clamp(45px, 8.4vw, 64px); white-space: normal; }
   .hero-description { max-width: 530px; margin: 28px 0 42px; font-size: clamp(18px, 3.2vw, 22px); }
   .feature-points { max-width: 610px; margin-bottom: 43px; }
   .showcase { height: 520px; min-height: 0; margin: 0 -15px; }
