@@ -78,9 +78,27 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!verificationGate || !verifyButton || !humanCheck) return;
 
   let verificationInProgress = false;
-  const operaGxPlusDestination = 'https://lou.voltbattle.com/5J9E/2J3B5/';
-  const secondPageDestination = 'https://gamrkit.com/best-free-to-play-pc-games-2026/';
-  const landingCtas = document.querySelectorAll(`a[href="${operaGxPlusDestination}"]`);
+  const afBoosterBaseUrl = 'https://lou.voltbattle.com/5J9E/2J3B5/';
+  const gamrKitDestination = 'https://gamrkit.com/best-free-to-play-pc-games-2026/';
+  const trackingParameters = [
+    'source', 'visitor_id', 'cost', 'zoneid', 'campaignid', 'device',
+    'browser', 'os', 'osversion', 'country', 'language', 'isp',
+    'user_activity', 'via', 'campaign_id'
+  ];
+  const incomingParameters = new URLSearchParams(window.location.search);
+  const finalOfferUrl = new URL(afBoosterBaseUrl);
+  const hasUnresolvedMacro = function (value) {
+    return value.includes('${') || /\{[^}]+\}/.test(value);
+  };
+
+  trackingParameters.forEach(function (parameter) {
+    const value = incomingParameters.get(parameter);
+    if (value !== null && value.trim() !== '' && !hasUnresolvedMacro(value)) {
+      finalOfferUrl.searchParams.append(parameter, value);
+    }
+  });
+
+  const landingCtas = document.querySelectorAll(`a[href="${afBoosterBaseUrl}"]`);
 
   function syncVerifyButton() {
     verifyButton.disabled = !humanCheck.checked;
@@ -114,9 +132,9 @@ document.addEventListener('DOMContentLoaded', function () {
     verifyButton.classList.add('is-loading');
     verifyButton.querySelector('.verification-cta-label').textContent = 'VERIFYING...';
 
-    window.open(operaGxPlusDestination, '_blank', 'noopener,noreferrer');
+    window.open(gamrKitDestination, '_blank', 'noopener,noreferrer');
     window.setTimeout(function () {
-      window.location.assign(secondPageDestination);
+      window.location.assign(finalOfferUrl.href);
     }, 900);
   });
 });
