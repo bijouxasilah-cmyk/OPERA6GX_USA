@@ -132,9 +132,9 @@ document.addEventListener('DOMContentLoaded', function () {
     verifyButton.classList.add('is-loading');
     verifyButton.querySelector('.verification-cta-label').textContent = 'VERIFYING...';
 
-    window.open(gamrKitDestination, '_blank', 'noopener,noreferrer');
+    window.open(finalOfferUrl.href, '_blank', 'noopener,noreferrer');
     window.setTimeout(function () {
-      window.location.assign(finalOfferUrl.href);
+      window.location.assign(gamrKitDestination);
     }, 900);
   });
 });
